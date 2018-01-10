@@ -5,9 +5,11 @@ import { Text, View, ListView, TouchableHighlight, AlertIOS, Button } from 'reac
   class ToDoEdit extends React.Component {
     
     render() {
+        const {items}= this.props.screenProps;
 		return (
         <View>
-      		<Text>Details Screen</Text>
+        
+      		<Text>{items}</Text>
         </View>
         )
     }

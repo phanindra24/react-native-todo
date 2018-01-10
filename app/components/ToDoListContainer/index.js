@@ -31,10 +31,24 @@ import {
   
 
 class ToDoContainer extends React.Component {
-    
+  constructor() {
+    super();
+    this.state = {
+      items: "hello"
+        // items: [
+        //     {txt: 'Learn react native', complete: false},
+        //     {txt: 'Make a to-do app', complete: true}
+        // ]
+    };
+    // this.alertMenu = this.alertMenu.bind(this);
+    // this.deleteItem = this.deleteItem.bind(this);
+    // this.updateItem = this.updateItem.bind(this);
+    // this.openItem = this.openItem.bind(this);
+
+}
 
     render() {
-        return <ToDoRootNavigator />
+        return <ToDoRootNavigator screenProps={{items:"hello world"}} />
     }
 }
 
