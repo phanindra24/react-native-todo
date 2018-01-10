@@ -1,6 +1,6 @@
 import styles from './styles'
 import ToDoList from '../ToDoList/index';
-// import ToDoEdit from '../ToDoEdit/index';
+import ToDoEdit from '../ToDoEdit/index';
 import React from 'react';
 import { Text, View, ListView, TouchableHighlight, AlertIOS, Button } from 'react-native';
 import {
@@ -8,11 +8,11 @@ import {
   } from 'react-navigation'; 
   
   
-  const ToDoEdit = () => (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-    </View>
-  );
+  // const ToDoEdit = () => (
+  //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+  //     <Text>Details Screen</Text>
+  //   </View>
+  // );
   
   const ToDoRootNavigator = StackNavigator({
     Home: {
