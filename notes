@@ -1,0 +1,31 @@
+//popup
+//stapte = {
+//    isDateTimePickerVisible: false,
+//    selectedStartDate: null,
+//  };
+//
+//  _showDateTimePicker = () => this.setState({ isDateTimePickerVisible: true });
+//
+//  _hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
+//
+//  _handleDatePicked = (date) => {
+////    this.state({selectedStartDate:date});
+//    this._hideDateTimePicker();
+//  };
+//
+//  render () {
+//    return (
+//      <View style={{ flex: 1 }}>
+//        <TouchableOpacity onPress={this._showDateTimePicker}>
+//          <Text>Show TimePicker</Text>
+//          //<Text>{selectedStartDate}</Text>
+//        </TouchableOpacity>
+//        <DateTimePicker
+//          isVisible={this.state.isDateTimePickerVisible}
+//          onConfirm={this._handleDatePicked}
+//          onCancel={this._hideDateTimePicker}
+//        />
+//      </View>
+//    );
+//}
+

@@ -13,7 +13,7 @@ import {
   //     <Text>Details Screen</Text>
   //   </View>
   // );
-  
+
   const ToDoRootNavigator = StackNavigator({
     Home: {
       screen: ToDoList,
@@ -48,7 +48,7 @@ class ToDoContainer extends React.Component {
 }
 
     render() {
-        return <ToDoRootNavigator screenProps={{items:"hello world"}} />
+        return <ToDoRootNavigator screenProps={{items:"hello bro"}} />
     }
 }
 

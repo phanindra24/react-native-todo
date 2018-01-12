@@ -17,7 +17,7 @@ class ToDoList extends React.Component {
       <Text>Home Screen</Text>
       <Button
         onPress={() => navigate('Details')}
-        title="Go to details"
+        title="Go to  all details"
       />
       <TouchableHighlight
                     style={[styles.button, styles.newButton]}
