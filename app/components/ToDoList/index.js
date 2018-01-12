@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, View, ListView, TouchableHighlight, AlertIOS, Button } from 'react-native';
 import {
     StackNavigator,
-  } from 'react-navigation'; 
+  } from 'react-navigation';
 
 
 class ToDoList extends React.Component {
@@ -12,7 +12,7 @@ class ToDoList extends React.Component {
     };
     render() {
         const { navigate } = this.props.navigation;
-      return ( 
+      return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
       <Button
@@ -30,4 +30,3 @@ class ToDoList extends React.Component {
   }
 
   module.exports = ToDoList;
-

@@ -5,9 +5,9 @@ import React from 'react';
 import { Text, View, ListView, TouchableHighlight, AlertIOS, Button } from 'react-native';
 import {
     StackNavigator,
-  } from 'react-navigation'; 
-  
-  
+  } from 'react-navigation';
+
+
   // const ToDoEdit = () => (
   //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
   //     <Text>Details Screen</Text>
@@ -18,7 +18,7 @@ import {
     Home: {
       screen: ToDoList,
       navigationOptions: {
-        headerTitle: 'Tasks List',
+        headerTitle: 'TasksList',
       },
     },
     Details: {
@@ -28,7 +28,7 @@ import {
       },
     },
   });
-  
+
 
 class ToDoContainer extends React.Component {
   constructor() {
@@ -48,7 +48,7 @@ class ToDoContainer extends React.Component {
 }
 
     render() {
-        return <ToDoRootNavigator screenProps={{items:"hello bro"}} />
+        return <ToDoRootNavigator  />
     }
 }
 
@@ -120,7 +120,7 @@ module.exports = ToDoContainer;
 
 
 // const { navigate } = this.props.navigation;
-        
+
 //     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         //     <Text>Home Screen</Text>
         //     <Button
@@ -151,4 +151,3 @@ module.exports = ToDoContainer;
             //         <Text style={styles.buttonText}>+</Text>
             //     </TouchableHighlight>
             // </View>
-        

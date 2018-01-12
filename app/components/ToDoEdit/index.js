@@ -11,22 +11,32 @@ import {
   StyleSheet,
   Text,
   View,
-  PanResponder
+  PanResponder,
+  TextInput,
+  Button,
 } from 'react-native';
 import DatePicker from './datepicker.js';
+// import {
+//     StackNavigator,
+//   } from 'react-navigation';
+
 
 class ToDoEdit extends Component {
 
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+    // super(props);
 
-    this.state = {
+    state = {
+
       date: '',
       time: '20:00',
+      todoName:'',
+
       datetime: '2016-05-05 20:00',
-      datetime1: '2016-05-05 20:00'
+      datetime1: '2016-05-05 20:00',
+      todoDescription:'',
     };
-  }
+  // }
 
   // componentWillMount() {
   //   this._panResponder = PanResponder.create({
@@ -40,47 +50,26 @@ class ToDoEdit extends Component {
   // }
 
   render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <View >
         <Text >
-          Welcome to react-native-datepicker example!
+          TODO Details
         </Text>
-        <DatePicker
-          style={{width: 200}}
-          date={this.state.date}
-          mode="date"
-          placeholder="placeholder"
-          format="YYYY-MM-DD"
-          minDate="2016-05-01"
-          maxDate="2016-06-01"
-          confirmBtnText="Confirm"
-          cancelBtnText="Cancel"
-          iconSource={require('./google_calendar.png')}
-          onDateChange={(date) => {this.setState({date: date});}}
+        <TextInput
+          style={{height: 40}}
+          placeholder="Todo Name"
+
+          onChangeText={(todoName) => this.setState({todoName})}
         />
-        <Text >date: {this.state.date}</Text>
-        <DatePicker
-          style={{width: 200}}
-          date={this.state.time}
-          mode="time"
-          format="HH:mm"
-          confirmBtnText="Confirm"
-          cancelBtnText="Cancel"
-          minuteInterval={10}
-          onDateChange={(time) => {this.setState({time: time});}}
+        <TextInput
+          style={{height: 40}}
+          placeholder="Todo Description"
+          onChangeText={(todoDescription) => this.setState({todoDescription})}
         />
-        <Text >time: {this.state.time}</Text>
-        <DatePicker
-          style={{width: 200}}
-          date={this.state.datetime}
-          mode="datetime"
-          format="YYYY-MM-DD HH:mm"
-          confirmBtnText="Confirm"
-          cancelBtnText="Cancel"
-          showIcon={false}
-          onDateChange={(datetime) => {this.setState({datetime: datetime});}}
-        />
-        <Text >datetime: {this.state.datetime}</Text>
+
+
         <DatePicker
           style={{width: 200}}
           date={this.state.datetime1}
@@ -102,8 +91,14 @@ class ToDoEdit extends Component {
           minuteInterval={10}
           onDateChange={(datetime) => {this.setState({datetime1: datetime});}}
         />
-        <Text >datetime: {this.state.datetime1}</Text>
-      </View>
+        <Button
+          onPress={() => navigate('Home')}
+          title="Add Todo"
+        />
+        </View>
+
+
+        // <Text >datetime: {this.state.datetime1}</Text>
     );
   }
 }
