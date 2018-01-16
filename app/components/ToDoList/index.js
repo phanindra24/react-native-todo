@@ -1,9 +1,9 @@
 import styles from './styles'
 import React from 'react';
-import { Text, View, ListView, TouchableHighlight, AlertIOS, Button } from 'react-native';
+import { Text, View, ListView, TouchableHighlight, AlertIOS, Button, FlatList } from 'react-native';
 import {
     StackNavigator,
-  } from 'react-navigation';
+  } from 'react-navigation'; 
 
 
 class ToDoList extends React.Component {
@@ -11,14 +11,12 @@ class ToDoList extends React.Component {
       title: 'Welcome',
     };
     render() {
-        const { navigate } = this.props.navigation;
-      return (
+      const {items}= this.props.screenProps;
+      const { navigate } = this.props.navigation;
+      return ( 
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        onPress={() => navigate('Details')}
-        title="Go to  all details"
-      />
+      <Text>List of Items</Text>
+      <FlatList data={items} renderItem={({item}) => <Text style={styles.item}>{item.key} </Text>} />
       <TouchableHighlight
                     style={[styles.button, styles.newButton]}
                     underlayColor='#99d9f4'
@@ -30,3 +28,4 @@ class ToDoList extends React.Component {
   }
 
   module.exports = ToDoList;
+

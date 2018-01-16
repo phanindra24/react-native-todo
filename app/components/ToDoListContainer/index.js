@@ -5,15 +5,8 @@ import React from 'react';
 import { Text, View, ListView, TouchableHighlight, AlertIOS, Button } from 'react-native';
 import {
     StackNavigator,
-  } from 'react-navigation';
-
-
-  // const ToDoEdit = () => (
-  //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-  //     <Text>Details Screen</Text>
-  //   </View>
-  // );
-
+  } from 'react-navigation'; 
+  
   const ToDoRootNavigator = StackNavigator({
     Home: {
       screen: ToDoList,
@@ -28,17 +21,17 @@ import {
       },
     },
   });
-
+  
 
 class ToDoContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      items: "hello"
-        // items: [
-        //     {txt: 'Learn react native', complete: false},
-        //     {txt: 'Make a to-do app', complete: true}
-        // ]
+      // items: "hello"
+        items: [
+            {key: 'Learn react native', complete: false},
+            {key: 'Make a to-do app', complete: true}
+        ]
     };
     // this.alertMenu = this.alertMenu.bind(this);
     // this.deleteItem = this.deleteItem.bind(this);
@@ -48,7 +41,7 @@ class ToDoContainer extends React.Component {
 }
 
     render() {
-        return <ToDoRootNavigator  />
+        return <ToDoRootNavigator screenProps={{items:this.state.items}} />
     }
 }
 
@@ -120,7 +113,7 @@ module.exports = ToDoContainer;
 
 
 // const { navigate } = this.props.navigation;
-
+        
 //     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         //     <Text>Home Screen</Text>
         //     <Button
@@ -151,3 +144,4 @@ module.exports = ToDoContainer;
             //         <Text style={styles.buttonText}>+</Text>
             //     </TouchableHighlight>
             // </View>
+        
