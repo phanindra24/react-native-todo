@@ -7,13 +7,6 @@ import {
     StackNavigator,
   } from 'react-navigation'; 
   
-  
-  // const ToDoEdit = () => (
-  //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-  //     <Text>Details Screen</Text>
-  //   </View>
-  // );
-  
   const ToDoRootNavigator = StackNavigator({
     Home: {
       screen: ToDoList,
@@ -34,11 +27,11 @@ class ToDoContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      items: "hello"
-        // items: [
-        //     {txt: 'Learn react native', complete: false},
-        //     {txt: 'Make a to-do app', complete: true}
-        // ]
+      // items: "hello"
+        items: [
+            {key: 'Learn react native', complete: false},
+            {key: 'Make a to-do app', complete: true}
+        ]
     };
     // this.alertMenu = this.alertMenu.bind(this);
     // this.deleteItem = this.deleteItem.bind(this);
@@ -48,7 +41,7 @@ class ToDoContainer extends React.Component {
 }
 
     render() {
-        return <ToDoRootNavigator screenProps={{items:"hello world"}} />
+        return <ToDoRootNavigator screenProps={{items:this.state.items}} />
     }
 }
 

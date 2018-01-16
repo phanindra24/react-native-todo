@@ -1,6 +1,6 @@
 import styles from './styles'
 import React from 'react';
-import { Text, View, ListView, TouchableHighlight, AlertIOS, Button } from 'react-native';
+import { Text, View, ListView, TouchableHighlight, AlertIOS, Button, FlatList } from 'react-native';
 
   class ToDoEdit extends React.Component {
     
@@ -9,11 +9,11 @@ import { Text, View, ListView, TouchableHighlight, AlertIOS, Button } from 'reac
         const { navigate } = this.props.navigation;
 		return (
         <View>
-        <Button
+        {/* <Button
         onPress={() => navigate('Home')}
         title="Go to List"
-      />
-      		<Text>{items}</Text>
+      /> */}
+      		<FlatList data={items} renderItem={({item}) => <Text style={styles.item}>{item.key} </Text>} />
         </View>
         )
     }
