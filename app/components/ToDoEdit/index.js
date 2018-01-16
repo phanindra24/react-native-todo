@@ -6,9 +6,13 @@ import { Text, View, ListView, TouchableHighlight, AlertIOS, Button } from 'reac
     
     render() {
         const {items}= this.props.screenProps;
+        const { navigate } = this.props.navigation;
 		return (
         <View>
-        
+        <Button
+        onPress={() => navigate('Home')}
+        title="Go to List"
+      />
       		<Text>{items}</Text>
         </View>
         )
