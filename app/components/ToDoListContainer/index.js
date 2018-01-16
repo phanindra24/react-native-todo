@@ -18,7 +18,7 @@ import {
     Home: {
       screen: ToDoList,
       navigationOptions: {
-        headerTitle: 'TasksList',
+        headerTitle: 'Tasks List',
       },
     },
     Details: {

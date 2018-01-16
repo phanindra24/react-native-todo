@@ -16,6 +16,7 @@ import {
   Button,
 } from 'react-native';
 import DatePicker from './datepicker.js';
+import FlipToggle from 'react-native-flip-toggle-button'
 // import {
 //     StackNavigator,
 //   } from 'react-navigation';
@@ -35,6 +36,7 @@ class ToDoEdit extends Component {
       datetime: '2016-05-05 20:00',
       datetime1: '2016-05-05 20:00',
       todoDescription:'',
+      isComplete:false,
     };
   // }
 
@@ -48,7 +50,9 @@ class ToDoEdit extends Component {
   //     onPanResponderTerminate: (e) => console.log('onPanResponderTerminate')
   //   });
   // }
-
+  componentDidMount() {
+    fetch("http://127.0.0.1:8000/demo/test")
+}
   render() {
     const { navigate } = this.props.navigation;
 
@@ -91,8 +95,29 @@ class ToDoEdit extends Component {
           minuteInterval={10}
           onDateChange={(datetime) => {this.setState({datetime1: datetime});}}
         />
+        <Text> Completed </Text>
+        <FlipToggle
+  buttonWidth={100}
+  buttonHeight={50}
+  buttonRadius={50}
+  sliderWidth={20}
+  sliderHeight={10}
+  sliderRadius={50}
+  isOn={false}
+  onLabel={'Yes'}
+  offLabel={'No'}
+  labelStyle={{ color: 'red' }}
+  onToggle={() =>
+    this.setState({
+      isComplete:!this.state.isComplete,
+    })
+  }
+/>
         <Button
-          onPress={() => navigate('Home')}
+          onPress={() =>
+            navigate('Home')
+          // this.state.todoName =  fetch("http://127.0.0.1:8000/demo/test")
+            }
           title="Add Todo"
         />
         </View>
